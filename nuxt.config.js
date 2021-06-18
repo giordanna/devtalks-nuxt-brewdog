@@ -6,6 +6,10 @@ export default {
     exclude: [/^\/cervejas\//],
   },
 
+  router: {
+    base: '/devtalks-nuxt-brewdog/'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s | Receitas Brewdog',
