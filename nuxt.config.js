@@ -7,7 +7,7 @@ export default {
   },
 
   router: {
-    base: '/devtalks-nuxt-brewdog/'
+    base: '/devtalks-nuxt-brewdog/',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -39,10 +39,16 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/shield.png',
+        content: 'shield.png',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: 'favicon.ico',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
