@@ -1,23 +1,33 @@
 <template>
   <div>
-    <div class="flex justify-between items-center">
+    <div
+      class="
+        mb-5
+        flex
+        justify-between
+        items-center
+        flex-col
+        md:flex-row
+        gap-y-5
+      "
+    >
       <InputPesquisa v-model.trim="pesquisa" caminho="/cervejas" />
       <Paginacao
         :paginaAtual="pagina"
         caminho="/cervejas"
-        class="mb-5"
         :itens="cervejas.length"
       />
     </div>
 
     <CervejaLista :cervejas="cervejas" />
 
-    <Paginacao
-      :paginaAtual="pagina"
-      caminho="/cervejas"
-      class="mt-5"
-      :itens="cervejas.length"
-    />
+    <div class="mt-5 flex items-center justify-center md:justify-end">
+      <Paginacao
+        :paginaAtual="pagina"
+        caminho="/cervejas"
+        :itens="cervejas.length"
+      />
+    </div>
   </div>
 </template>
 

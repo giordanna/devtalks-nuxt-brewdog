@@ -1,19 +1,34 @@
 <template>
-  <form @submit.prevent="mudarQuery">
+  <form @submit.prevent="mudarQuery" class="flex gap-2 md:inline-flex">
     <input
       class="
         border border-gray-200
         p-2
-        mr-2
+        flex-auto
         transition
         focus:outline-none focus:border-black
       "
       type="search"
       :value="value"
+      placeholder="Busque aqui..."
       @input="$emit('input', $event.target.value)"
     />
-    <button class="uppercase  p-2 border border-black bg-black text-white transition focus:outline-none" type="submit">
-      Pesquisar
+    <button
+      class="
+        uppercase
+        p-2
+        flex-none
+        border border-black
+        bg-black
+        text-white
+        transition
+        focus:outline-none
+      "
+      title="Pesquisar"
+      type="submit"
+    >
+      <span class="hidden md:inline">Pesquisar</span>
+      <IconChevronRight class="md:hidden inline" />
     </button>
   </form>
 </template>
