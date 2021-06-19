@@ -15,8 +15,9 @@
   >
     <img
       class="block mx-auto mb-2 h-40"
-      :src="cerveja.image_url"
+      :src="!!cerveja.image_url ? cerveja.image_url : 'no-image-placeholder.png'"
       :alt="cerveja.name"
+      @error="$event.target.src = 'no-image-placeholder.png'"
     />
 
     <h1
@@ -54,18 +55,7 @@
       {{ cerveja.tagline }}
     </h2>
 
-    <p>
-      <strong class="font-bold">ABV</strong>
-      {{ cerveja.abv ? cerveja.abv : '???' }}% |
-      <strong class="font-bold">IBU</strong>
-      {{ cerveja.ibu ? cerveja.ibu : '???' }} |
-      <strong class="font-bold">EBC</strong>
-      {{
-        cerveja.ebc
-          ? `${cerveja.ebc} (${cerveja.ebc >= 20 ? 'escura' : 'clara'})`
-          : '???'
-      }}
-    </p>
+    <CervejaValores :cerveja="cerveja" />
   </NuxtLink>
 </template>
 

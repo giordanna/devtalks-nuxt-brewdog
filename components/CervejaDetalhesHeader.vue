@@ -2,8 +2,11 @@
   <header class="text-center mb-8">
     <img
       class="block mx-auto h-52 md:h-96 mb-3"
-      :src="cerveja.image_url"
+      :src="
+        !!cerveja.image_url ? cerveja.image_url : 'no-image-placeholder.png'
+      "
       :alt="cerveja.name"
+      @error="$event.target.src = 'no-image-placeholder.png'"
     />
 
     <h1 class="font-black text-xl md:text-5xl uppercase mb-1">
@@ -13,18 +16,7 @@
       {{ cerveja.tagline }}
     </h2>
 
-    <p class="my-3">
-      <strong class="font-bold">ABV</strong>
-      {{ cerveja.abv ? cerveja.abv : '???' }}% |
-      <strong class="font-bold">IBU</strong>
-      {{ cerveja.ibu ? cerveja.ibu : '???' }} |
-      <strong class="font-bold">EBC</strong>
-      {{
-        cerveja.ebc
-          ? `${cerveja.ebc} (${cerveja.ebc >= 20 ? 'escura' : 'clara'})`
-          : '???'
-      }}
-    </p>
+    <CervejaValores :cerveja="cerveja" />
 
     <HopIcon
       class="inline-block text-seagreen-600"

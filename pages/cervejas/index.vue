@@ -35,23 +35,23 @@
 export default {
   head() {
     return {
-      title: `Cervejas - Página ${this.pagina}`,
+      title: this.tituloHead,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `Página ${this.pagina} com ${this.cervejas.length} cervejas.`,
+          content: this.descricaoHead,
         },
         // tags do opengraph
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `Cervejas - Página ${this.pagina}`,
+          content: `Receitas Brewdog | ${this.tituloHead}`,
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `Página ${this.pagina} com ${this.cervejas.length} cervejas.`,
+          content: this.descricaoHead,
         },
       ],
     }
@@ -90,6 +90,18 @@ export default {
       pagina: 1,
       pesquisa: '',
     }
+  },
+  computed: {
+    tituloHead() {
+      return `${
+        this.$route.query.q ? `"${this.$route.query.q}" - ` : ''
+      }Página ${this.$route.query.p ? this.$route.query.p : 1}`
+    },
+    descricaoHead() {
+      return `Página ${this.$route.query.p ? this.$route.query.p : 1}${
+        this.$route.query.q ? ` da busca "${this.$route.query.q}"` : ''
+      }, com ${this.cervejas.length} cervejas.`
+    },
   },
 }
 </script>

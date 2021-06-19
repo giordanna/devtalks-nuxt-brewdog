@@ -41,12 +41,12 @@ export default {
       if (this.value !== '') {
         this.$router.push({
           path: this.caminho,
-          query: { ...this.$route.query, q: this.value },
+          query: { q: this.value },
         })
       } else {
         this.$router.push({
           path: this.caminho,
-          query: { ...this.$route.query, q: undefined },
+          query: { q: undefined },
         })
       }
     },
