@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="my-5">
-      <h3 class="font-bold text-2xl mb-3">Dica</h3>
+      <h3 class="font-bold text-xl md:text-2xl mb-3">Dica</h3>
       <p>
         {{ cerveja.brewers_tips }}
       </p>
@@ -9,7 +9,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <section class="my-5">
-        <h3 class="font-bold text-2xl mb-3">Densidades</h3>
+        <h3 class="font-bold text-xl md:text-2xl mb-3">Densidades</h3>
         <ul class="list-disc ml-4">
           <li>Original: {{ (cerveja.target_og - 1000) / 10.0 }} %</li>
           <li>Final: {{ (cerveja.target_fg - 1000) / 10.0 }} %</li>
@@ -17,7 +17,7 @@
       </section>
 
       <section class="my-5">
-        <h3 class="font-bold text-2xl mb-3">Malte(s)</h3>
+        <h3 class="font-bold text-xl md:text-2xl mb-3">Malte(s)</h3>
         <ul class="list-disc ml-4">
           <li v-for="malte in cerveja.ingredients.malt" :key="malte.name">
             {{ malte.amount.value }} {{ unidade(malte.amount.unit) }} de
@@ -27,7 +27,7 @@
       </section>
 
       <section class="my-5">
-        <h3 class="font-bold text-2xl mb-3">Lúpulo(s)</h3>
+        <h3 class="font-bold text-xl md:text-2xl mb-3">Lúpulo(s)</h3>
         <ul class="list-disc ml-4">
           <li v-for="(lupulo, index) in cerveja.ingredients.hops" :key="index">
             {{ adiciona(lupulo.add) }}: {{ lupulo.amount.value }}
@@ -39,13 +39,13 @@
       </section>
 
       <section class="my-5">
-        <h3 class="font-bold text-2xl mb-3">Fermento</h3>
+        <h3 class="font-bold text-xl md:text-2xl mb-3">Fermento</h3>
 
         <p>{{ cerveja.ingredients.yeast }}</p>
       </section>
 
       <section class="my-5">
-        <h3 class="font-bold text-2xl mb-3">Volume</h3>
+        <h3 class="font-bold text-xl md:text-2xl mb-3">Volume</h3>
         <ul class="list-disc ml-4">
           <li>
             Fervura: {{ cerveja.boil_volume.value }}
@@ -59,7 +59,7 @@
       </section>
 
       <section class="my-5">
-        <h3 class="font-bold text-2xl mb-3">Método</h3>
+        <h3 class="font-bold text-xl md:text-2xl mb-3">Método</h3>
         <ul class="list-disc ml-4">
           <li>
             Brassagem(s):
@@ -85,7 +85,7 @@
       </section>
 
       <section class="my-5">
-        <h3 class="font-bold text-2xl mb-3">Combina com</h3>
+        <h3 class="font-bold text-xl md:text-2xl mb-3">Combina com</h3>
         <ul class="list-disc ml-4">
           <li v-for="comida in cerveja.food_pairing" :key="comida">
             {{ comida }}

@@ -1,12 +1,12 @@
 <template>
   <header class="text-center mb-8">
     <img
-      class="block mx-auto h-96 mb-3"
+      class="block mx-auto h-52 md:h-96 mb-3"
       :src="cerveja.image_url"
       :alt="cerveja.name"
     />
 
-    <h1 class="font-black text-5xl uppercase mb-1">
+    <h1 class="font-black text-xl md:text-5xl uppercase mb-1">
       {{ cerveja.name }}
     </h1>
     <h2 class="italic font-light mb-3">
@@ -32,11 +32,20 @@
       :key="ibu"
     />
 
-    <p class="my-3 text-left">
+    <p class="my-3 text-left text-sm md:text-base">
       {{ cerveja.description }}
     </p>
 
-    <p class="text-left text-blue-600 text-sm my-1 font-bold block mx-auto">
+    <p
+      class="
+        text-left text-blue-600 text-xs
+        md:text-sm
+        my-1
+        font-bold
+        block
+        mx-auto
+      "
+    >
       {{ cerveja.contributed_by }} | Primeira Fabricação:
       {{ cerveja.first_brewed }}
     </p>

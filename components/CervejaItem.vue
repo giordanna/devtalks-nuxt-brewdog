@@ -19,7 +19,19 @@
       :alt="cerveja.name"
     />
 
-    <h1 class="max-w-full font-bold relative inline-block mx-auto text-xl uppercase mb-1">
+    <h1
+      class="
+        max-w-full
+        font-bold
+        relative
+        inline-block
+        mx-auto
+        text-lg
+        md:text-xl
+        uppercase
+        mb-1
+      "
+    >
       <span class="relative z-10 block truncate">
         {{ cerveja.name }}
       </span>
@@ -38,7 +50,7 @@
         "
       ></span>
     </h1>
-    <h2 class="italic font-thin mb-3">
+    <h2 class="italic font-thin mb-3 text-sm md:text-base">
       {{ cerveja.tagline }}
     </h2>
 
